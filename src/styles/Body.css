@@ -1,0 +1,32 @@
+.body{
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.stocks{
+    border: 0;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+@media(max-width: 800px){
+    .body{
+        padding: 0;
+    }
+    .forecast{
+        display: none;
+    }
+    .stocks{
+        height: 50px;
+    }
+}

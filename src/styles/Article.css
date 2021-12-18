@@ -1,0 +1,36 @@
+.article{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.article-text-container{
+    padding: 20px
+}
+
+.article-description{
+    margin: 0;
+}
+
+.article-title{
+    margin: 0 0 10px 0;
+}
+
+.article-img{
+    max-width: 300px;
+    max-height: fit-content;
+}
+
+.article-source{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.445);
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
+}
+
+.page-selector{
+    text-align: center;
+    margin-top: 20px;
+}
