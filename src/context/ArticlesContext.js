@@ -3,9 +3,8 @@ import axios from "axios"
 
 export const ArticlesContext = createContext()
 
-const baseUrl = "https://newsapi.org/v2"
-const APIKey = "&apiKey=7801956d0e08493f86b4ea7ecfa09769"
-const exampleAPIKey = "&apiKey=4971b5051f9c4026aade80339e9b0ed8"
+const baseUrl = process.env.REACT_APP_API_BASE_URL
+const APIKey = process.env.REACT_APP_API_KEY
 
 export function ArticleProvider(props){
     const [articles, setArticles] = useState()
@@ -17,10 +16,16 @@ export function ArticleProvider(props){
 
     async function getArticles(){
         setLoading(true)
+        
         search ? 
         APIUrl = `${baseUrl}/everything?q=${search}${APIKey}`
         :
         APIUrl = `${baseUrl}/top-headlines?category=${category}&country=${country}&pageSize=100${APIKey}`
+        
+        if(baseUrl.includes("netlify")){
+            APIUrl = APIUrl.replace("/everything", "")
+            APIUrl = APIUrl.replace("/top-headlines", "")
+        }
         
         const result = await axios.get(APIUrl)
         const filteredArticles = result.data.articles.filter(article => {
