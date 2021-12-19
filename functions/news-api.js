@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import axios from "axios"
 
 exports.handler = async function(event, context) {
     const search = event.queryStringParameters.search
@@ -14,7 +14,8 @@ exports.handler = async function(event, context) {
         :
         APIUrl = `${baseUrl}/top-headlines?category=${category}&country=${country}&pageSize=100${APIKey}`
 
-        response = await fetch(APIUrl)
+        response = await axios.get(APIUrl)
+        console.log(response.data)
     } catch (err) {
         return {
             statusCode: err.statusCode || 500,
@@ -26,6 +27,6 @@ exports.handler = async function(event, context) {
 
     return {
         statusCode: 200,
-        body: response
+        body: JSON.stringify(response.data)
     };
 }
