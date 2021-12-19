@@ -6,7 +6,7 @@ import Pagination from '@mui/material/Pagination';
 import "../styles/Articles.css"
 
 function Articles() {
-    const [articles, setArticles,,,,,loading] = useContext(ArticlesContext)
+    const [articles, setArticles, country, setCountry, category, setCategory, loading, search, setSearch] = useContext(ArticlesContext)
     const [page, setPage] = useState(1)
 
     function handlePageChange(e, value){
@@ -37,7 +37,7 @@ function Articles() {
                         </div>
                     </div>
                 :
-                    <p>לא נמצאו כתבות</p>
+                    <p>מצטערים, לא נמצאו כתבות</p>
             }
         </div>
     )

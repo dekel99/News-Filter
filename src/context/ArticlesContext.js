@@ -26,7 +26,6 @@ export function ArticleProvider(props){
             APIUrl = APIUrl.replace("/everything", "")
             APIUrl = APIUrl.replace("/top-headlines", "")
         }
-        
         const result = await axios.get(APIUrl)
         const filteredArticles = result.data.articles.filter(article => {
             if(article.urlToImage && article.description) return true

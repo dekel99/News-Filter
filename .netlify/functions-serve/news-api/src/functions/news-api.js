@@ -2670,7 +2670,6 @@ exports.handler = async function(event, context) {
   try {
     search ? APIUrl = `${baseUrl}/everything?q=${search}${APIKey}` : APIUrl = `${baseUrl}/top-headlines?category=${category}&country=${country}&pageSize=100${APIKey}`;
     response = await axios.get(APIUrl);
-    console.log(response.data);
   } catch (err) {
     return {
       statusCode: err.statusCode || 500,

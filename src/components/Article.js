@@ -1,5 +1,4 @@
 import Card from "@mui/material/Card"
-// import { useState } from "react"
 import "../styles/Article.css"
 
 function Article({article}) {

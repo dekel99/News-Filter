@@ -7,7 +7,7 @@ import Select from '@mui/material/Select';
 import { ArticlesContext } from "../context/ArticlesContext"
 
 function DropDownCategory() {
-  const [,,,,category, setCategory] = useContext(ArticlesContext)
+  const [articles, setArticles, country, setCountry, category, setCategory, loading, search, setSearch] = useContext(ArticlesContext)
 
   const handleChange = (e) => {
     setCategory(e.target.value)

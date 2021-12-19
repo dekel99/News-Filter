@@ -1,4 +1,3 @@
-// import axios from "axios"
 const axios = require("axios")
 
 exports.handler = async function(event, context) {
@@ -14,9 +13,7 @@ exports.handler = async function(event, context) {
         APIUrl = `${baseUrl}/everything?q=${search}${APIKey}`
         :
         APIUrl = `${baseUrl}/top-headlines?category=${category}&country=${country}&pageSize=100${APIKey}`
-
         response = await axios.get(APIUrl)
-        console.log(response.data)
     } catch (err) {
         return {
             statusCode: err.statusCode || 500,

@@ -1,8 +1,8 @@
-import "../styles/Header.css"
 import DropDown from "./DropDown"
 import DropDownCategory from "./DropDownCategory"
 import Search from "./Search"
 import logo from "../News-filter-logo.jpg"
+import "../styles/Header.css"
 
 function Header() {
     return (
